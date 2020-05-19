@@ -245,7 +245,9 @@ def plot_map(ShortestPath):
         lon_list.append(gmaps.geocode(x)[0]["geometry"]["location"]["lng"])
 
     # Pass the center latitude and center longitude (Set center as McD Bangsar, zoom range : 14)
+
     gmap1 = gmplot.GoogleMapPlotter(3.1345249, 101.6656899, 14)
+    gmap1.apikey = "AIzaSyBaVdPnbR_hU0vWb57zl8bUzDX7GAj_wGA"
 
     # scatter points on the google map
     gmap1.scatter(lat_list, lon_list, '# FF0000', size=40, marker=False)
