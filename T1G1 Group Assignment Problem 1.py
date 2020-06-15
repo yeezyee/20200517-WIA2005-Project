@@ -867,18 +867,7 @@ i = 0;
 for x in pathAttributes["positive"]:
     total = 0;
     for z in pathAttributes["mode"][i]:
-        if z == "KTM":
-            total += ktmNumOfPos
-        elif z == "MRT":
-            total += mrtNumOfPos
-        elif z == "LRT":
-            total += lrtNumOfPos
-        elif z == "BUS":
-            total += busNumOfPos
-        elif z == "CAR":
-            total += carNumOfPos
-        else:
-            total += 0
+        total += pos[z]
     pathAttributes["positive"][i]=total
     i += 1
 #negative counter
@@ -886,18 +875,7 @@ i = 0;
 for x in pathAttributes["negative"]:
     total = 0;
     for z in pathAttributes["mode"][i]:
-        if z == "KTM":
-            total += ktmNumOfNeg
-        elif z == "MRT":
-            total += mrtNumOfNeg
-        elif z == "LRT":
-            total += lrtNumOfNeg
-        elif z == "BUS":
-            total += busNumOfNeg
-        elif z == "CAR":
-            total += carNumOfNeg
-        else:
-            total += 0
+        total += neg[z]
     pathAttributes["negative"][i]=total
     i += 1
 #score counter
@@ -912,6 +890,7 @@ for x in pathAttributes["score"]:
 
 for i in range (len(pathAttributes["path"])):
     print("Route: ", pathAttributes["path"][i])
+    print("Travel modes: ", pathAttributes["mode"][i])
     print("Positive: ", pathAttributes["positive"][i])
     print("Negative: ", pathAttributes["negative"][i])
     print("Score: ", pathAttributes["score"][i])
